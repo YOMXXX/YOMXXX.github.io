@@ -3,6 +3,9 @@
   .s-sticker {
     width: 270px !important;
   }
+  .cat-container {
+    text-align: right;
+  }
 </style>
 <html lang=zh>
 <head><link rel=manifest href=/manifest.json>
@@ -164,6 +167,13 @@
   </div>
 </footer>
 
+        <div class="cat-container">
+          <canvas
+            id="vuepress-cat"
+            width="200"
+           height="200"
+            class="live2d"
+          ></canvas>
     </div>
     <!-- styles -->
 
@@ -204,8 +214,9 @@
 <!-- Disqus Comments -->
 
 
+    </div>
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1601372874289')
+  navigator.serviceWorker.register('/sw.js?t=1604389844930')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
@@ -234,4 +245,30 @@ WIDGET = {
 }
   </script>
 <script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+<script type="module">
+  import live2dJSString from "/assets/2d.js"
+  let model = {
+    whiteCat: "https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-tororo/assets/tororo.model.json",
+  };
+  function initCat() {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? true : false;
+    if (isMobile) {
+      isLoaded = false;
+      return console.log("mobile do not load model");
+    }
+    if (!window.loadlive2d) {
+        const script = document.createElement("script");
+        script.innerHTML = live2dJSString;
+        document.body.appendChild(script);
+      }
+    let style = {
+      width: (150 / 1424) * document.body.clientWidth,
+      height: ((150 / 1424) * document.body.clientWidth) / 0.8,
+    };
+    setTimeout(() => {
+      window.loadlive2d("vuepress-cat", model.whiteCat);
+    },1000);
+  }
+  initCat();
+</script>
 </html>

@@ -451,6 +451,7 @@ html {
   border-top: 2px solid #c9cacc;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  text-decoration: none;
 }
 body {
   margin: 0;
@@ -464,6 +465,7 @@ body {
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
+  text-decoration: none;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
