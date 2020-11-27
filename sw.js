@@ -27,6 +27,8 @@ var precacheUrls = [
 
   '/',
 
+  '/2020/11/20/20201120-docker-web/',
+
   '/2020/09/15/20200915-blog/',
 
   '/2020/09/11/20200911-yun/',
@@ -34,8 +36,6 @@ var precacheUrls = [
   '/2020/09/04/20200904-web3/',
 
   '/2020/09/03/20200903-feishu-bug-collection/',
-
-  '/2020/09/02/20200902-feishu-robot/',
 
 ];
 toolbox.precache(precacheUrls);
